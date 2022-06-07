@@ -21,8 +21,15 @@
     border: none;
     border-top-right-radius: 3vh;
     border-bottom-right-radius: 3vh;
-    background-color: #000;
     color: #fff;
     font-size: 3vh;
-    background-color: #00438b;
+    background-color: #005ec3;
+    transition: 0.2s;
+}
+
+.Button:hover {
+    background-color: #004896;
+}
+.Button:active {
+    background-color: #00356e;
 }
