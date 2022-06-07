@@ -1,0 +1,44 @@
+.Card {
+    width: 200px;
+    background-color: #84c8ff;
+    height: fit-content;
+    padding: 12px;
+    margin: 1vh;
+    border-radius: 2vw;
+    font-size: 2vh;
+    box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
+}
+
+.MainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.City {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.Description {
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+.Temp {
+    margin-top: 4px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.Temp::after {
+    content: '°';
+}
+
+.Info {
+    margin-top: 12px;
+}
+
+.Info > div {
+    margin-top: 4px;
+}

@@ -1,5 +1,10 @@
-.Main {
-  background: linear-gradient(#0463ca, #b0d6f5);
-  height: 100vh;
+body {
+  background-color: #b0d6f5;
   padding: 2vh;
+}
+
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  
 }
