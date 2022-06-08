@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './App.css';
 
 import { Input } from './Input/Input';
 import { CardList } from './CardList/CardList';
+import { useCities } from './hooks/useCities';
 
 function App() {
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useCities()
   
   return (
     <div className="Main">
