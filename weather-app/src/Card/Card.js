@@ -4,7 +4,7 @@ import { useWeather } from '../hooks/useWeather';
 
 import './Card.css';
 
-export const Card = memo(({ city }) => {
+export const Card = memo(({ city, dispatch }) => {
   const data = useWeather(city)
 
   if (!data) return null
@@ -12,8 +12,18 @@ export const Card = memo(({ city }) => {
   const { description, icon } = weather[0]
   const { temp, humidity, feels_like } = main
 
+  const handleOnClick = () => {
+    dispatch({
+      type: 'REMOVE_CITY',
+      payload: city,
+    })
+  }
+
   return (
     <div className="Card">
+      <div className='RemoveBtn'>
+        <button className='RemoveCity' onClick={handleOnClick}>x</button>
+      </div>
       <div className='MainInfo'>
         <img className='Icon' src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt='icon'/>
         <div className='City'>{name}</div>
