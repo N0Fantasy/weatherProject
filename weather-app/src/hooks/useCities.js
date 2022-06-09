@@ -1,6 +1,8 @@
 import { useEffect, useReducer } from 'react';
 
 const iniState = {
+    inputValue: '',
+    editingCity: '',
     cities: JSON.parse(localStorage.getItem('cities')) || [],
 }
 
@@ -14,6 +16,24 @@ const reducer = (state, action) => {
             const newCities = state.cities.filter(city => city !== action.payload)
             return {...state, cities: newCities}
         }
+        case 'EDIT_CITY': {
+            return {...state, inputValue: action.payload, editingCity: action.payload}
+        }
+        case 'EDIT_CITY_DONE': {
+            const newCities = state.cities.filter(city => city !== state.editingCity)
+            return {
+                ...state,
+                inputValue: iniState.inputValue,
+                editingCity: iniState.editingCity,
+                cities: [...newCities, action.payload]
+            }
+        }
+        case 'CHANGE_INPUT': {
+            return {...state, inputValue: action.payload}
+        }
+        case 'CLEAR_INPUT': {
+            return {...state, inputValue: iniState.inputValue}
+        }
         default: 
             return iniState
     }
@@ -26,5 +46,5 @@ export const useCities = () => {
         localStorage.setItem('cities', JSON.stringify(cities))
     }, [cities])
 
-    return [cities, dispatch]
+    return [state, dispatch]
 }

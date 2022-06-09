@@ -9,12 +9,12 @@
     box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
 }
 
-.RemoveBtn {
+.Btns {
     display: flex;
     justify-content: right;
 }
 
-.RemoveCity {
+.RemoveCityBtn {
     border: none;
     border-radius: 10px;
     padding: 0;
@@ -26,11 +26,30 @@
     background-color: #4aaeff;
     transition: 0.2s;
 }
-
-.RemoveCity:hover {
+.RemoveCityBtn:hover {
     background-color: #2f94ff;
 }
-.RemoveCity:active {
+.RemoveCityBtn:active {
+    background-color: #007bff;
+}
+
+.EditCityBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    margin-right: 3px;
+    line-height: 0;
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4aaeff;
+    transition: 0.2s;
+}
+.EditCityBtn:hover {
+    background-color: #2f94ff;
+}
+.EditCityBtn:active {
     background-color: #007bff;
 }
 

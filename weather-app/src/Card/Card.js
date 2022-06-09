@@ -12,17 +12,24 @@ export const Card = memo(({ city, dispatch }) => {
   const { description, icon } = weather[0]
   const { temp, humidity, feels_like } = main
 
-  const handleOnClick = () => {
+  const handleOnRemove = () => {
     dispatch({
       type: 'REMOVE_CITY',
+      payload: city,
+    })
+  }
+  const handleOnEdit = () => {
+    dispatch({
+      type: 'EDIT_CITY',
       payload: city,
     })
   }
 
   return (
     <div className="Card">
-      <div className='RemoveBtn'>
-        <button className='RemoveCity' onClick={handleOnClick}>x</button>
+      <div className='Btns'>
+        <button className='EditCityBtn' onClick={handleOnEdit}>Edit</button>
+        <button className='RemoveCityBtn' onClick={handleOnRemove}>x</button>
       </div>
       <div className='MainInfo'>
         <img className='Icon' src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt='icon'/>
