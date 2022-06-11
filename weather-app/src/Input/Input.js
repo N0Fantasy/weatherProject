@@ -1,9 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext } from 'react'
 
 import './Input.css';
+import { GlobalContext } from '../App';
 
-export const Input = ({ inputValue, editingCity, dispatch }) => {
+export const Input = () => {
   const inputRef = useRef(null)
+  const { state, dispatch } = useContext(GlobalContext)
+  const { inputValue, editingCity } = state
 
   const handleOnChange = (event) => {
     dispatch({
