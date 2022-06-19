@@ -2,3 +2,23 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.Select {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+select {
+    width: 100%;
+    height: 5vh;
+    padding: 6px;
+    border: none;
+    outline: 0;
+    border-radius: 3vh;
+    color: #fff;
+    font-size: 3vh;
+    background-color: #005ec3;
+    cursor: pointer;
+    transition: 0.2s;
+}
