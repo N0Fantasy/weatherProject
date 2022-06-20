@@ -1,0 +1,32 @@
+.SingleCityForecast {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.DailyCards {
+    margin-top: 24px;
+    padding: 6px;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.DailyCards::-webkit-scrollbar {
+    height: 0;
+}
+
+.ToMain {
+    background-color: #84c8ff;
+    height: 40px;
+    padding: 12px;
+    margin: 24px 10px 10px 10px;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: 500;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
+}
+
+.ToMain:hover {
+    background-color: #63b7fb;
+}

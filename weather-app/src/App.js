@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <GlobalContext.Provider value={{ state, dispatch }}>
         <Routes>
-          <Route path='/home' element={
+          <Route path='/main' element={
             <div className="Main">
               <Input />
               <ErrorBoundary>
