@@ -20,6 +20,9 @@ function App() {
         <Routes>
           <Route path='/main' element={
             <div className="Main">
+              <div className='header'>
+                <h1>Weather Summary</h1>
+              </div>
               <Input />
               <ErrorBoundary>
                 <CardList />
