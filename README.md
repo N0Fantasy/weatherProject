@@ -1,3 +1,3 @@
 # weatherProject
 
-visit: [a link](https://weather-project-liard.vercel.app/main)
+[visit](https://weather-project-liard.vercel.app/main)
