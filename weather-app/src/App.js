@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import './App.css';
 
@@ -26,7 +26,11 @@ function App() {
               </ErrorBoundary>
             </div>
           } />
-          <Route path='/city/:city' element={ < SingleCity /> } />
+          <Route path='/city/:city' element={< SingleCity />} />
+          <Route
+            path="*"
+            element={<Navigate to='/main' replace />
+          } />
         </Routes>
       </GlobalContext.Provider>
     </BrowserRouter>
