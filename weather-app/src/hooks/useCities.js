@@ -7,20 +7,22 @@ const iniState = {
 }
 
 const reducer = (state, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'ADD_CITY': {
-            const newCities = [...state.cities, action.payload]
-            return {...state, cities: newCities}
+            const newCities = state.cities.filter(city => city === action.payload).length !== 0
+                ? [...state.cities]
+                : [...state.cities, action.payload]
+            return { ...state, cities: newCities }
         }
         case 'REMOVE_CITY': {
             const newCities = state.cities.filter(city => city !== action.payload)
-            return {...state, cities: newCities}
+            return { ...state, cities: newCities }
         }
         case 'EDIT_CITY': {
-            return {...state, inputValue: action.payload, editingCity: action.payload}
+            return { ...state, inputValue: action.payload, editingCity: action.payload }
         }
         case 'EDIT_CITY_DONE': {
-            const newCities = state.cities.filter(city => city !== state.editingCity)
+            const newCities = state.cities.filter(city => city !== state.editingCity && city !== action.payload)
             return {
                 ...state,
                 inputValue: iniState.inputValue,
@@ -29,12 +31,12 @@ const reducer = (state, action) => {
             }
         }
         case 'CHANGE_INPUT': {
-            return {...state, inputValue: action.payload}
+            return { ...state, inputValue: action.payload }
         }
         case 'CLEAR_INPUT': {
-            return {...state, inputValue: iniState.inputValue}
+            return { ...state, inputValue: iniState.inputValue }
         }
-        default: 
+        default:
             return iniState
     }
 }

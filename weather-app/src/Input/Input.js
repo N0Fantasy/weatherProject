@@ -18,7 +18,7 @@ export const Input = () => {
   const handleOnClick = () => {
     dispatch({
       type: 'ADD_CITY',
-      payload: inputValue
+      payload: inputValue.trim().toLowerCase()
     })
     dispatch({
       type: 'CLEAR_INPUT',
@@ -30,7 +30,7 @@ export const Input = () => {
   const handleOnDone = () => {
     dispatch({
       type: 'EDIT_CITY_DONE',
-      payload: inputValue
+      payload: inputValue.trim().toLowerCase()
     })
     inputRef.current.focus()
   }

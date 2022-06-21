@@ -8,7 +8,7 @@ export const useWeather = (city) => {
       .then(res => {
         if (res.ok) {
           return res.json()
-        } else if (res.status === 404) {
+        } else if (res.status === 404 || res.status === 400) {
           const filtredCities = JSON.parse(localStorage.cities).filter(cityT => cityT !== city)
           localStorage.setItem('cities', JSON.stringify(filtredCities))
           
