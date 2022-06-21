@@ -37,7 +37,7 @@ export const Input = () => {
 
   return (
     <div className="InputWrap">
-      <input className='Input' onChange={handleOnChange} value={inputValue} ref={inputRef} placeholder='Enter the name of the city'/>
+      <input className='Input' onChange={handleOnChange} value={inputValue} ref={inputRef} placeholder='Enter name of city'/>
       {
         editingCity
           ?
