@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+
 import './App.css';
 
+import { Input } from './Input/Input';
+import { CardList } from './CardList/CardList';
+import { useCities } from './hooks/useCities';
+import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
+import { SingleCity } from './SingleCity/SingleCity';
+
+export const GlobalContext = React.createContext()
+
 function App() {
+  const [state, dispatch] = useCities()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalContext.Provider value={{ state, dispatch }}>
+        <Routes>
+          <Route path='/main' element={
+            <div className="Main">
+              <Input />
+              <ErrorBoundary>
+                <CardList />
+              </ErrorBoundary>
+            </div>
+          } />
+          <Route path='/city/:city' element={< SingleCity />} />
+          <Route
+            path="*"
+            element={<Navigate to='/main' replace />
+          } />
+        </Routes>
+      </GlobalContext.Provider>
+    </BrowserRouter>
   );
 }
 

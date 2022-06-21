@@ -1,0 +1,36 @@
+.InputWrap {
+    display: flex;
+    height: 5vh;
+    border-radius: 3vh;
+    box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+}
+
+.Input {
+    width: 80%;
+    border: none;
+    outline: 0;
+    padding: 6px 16px;
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+    font-size: 3vh;
+}
+
+.Button {
+    width: 20%;
+    border: none;
+    border-top-right-radius: 3vh;
+    border-bottom-right-radius: 3vh;
+    color: #fff;
+    font-size: 3vh;
+    background-color: #005ec3;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.Button:hover {
+    background-color: #004896;
+}
+.Button:active {
+    background-color: #00356e;
+}

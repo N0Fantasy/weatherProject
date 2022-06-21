@@ -1,0 +1,93 @@
+.Card {
+    width: 200px;
+    background-color: #84c8ff;
+    height: fit-content;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 13px;
+    box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Btns {
+    display: flex;
+    justify-content: right;
+}
+
+.RemoveCityBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    line-height: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4aaeff;
+    transition: 0.2s;
+}
+.RemoveCityBtn:hover {
+    background-color: #2f94ff;
+}
+.RemoveCityBtn:active {
+    background-color: #007bff;
+}
+
+.EditCityBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    margin-right: 3px;
+    line-height: 0;
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4aaeff;
+    transition: 0.2s;
+}
+.EditCityBtn:hover {
+    background-color: #2f94ff;
+}
+.EditCityBtn:active {
+    background-color: #007bff;
+}
+
+.MainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.City {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.Description {
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+.Temp {
+    margin-top: 4px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.Temp::after {
+    content: '°';
+}
+
+.Info {
+    margin-top: 12px;
+}
+
+.Info > div {
+    margin-top: 4px;
+}
