@@ -1,5 +1,8 @@
 # WeatherProject
 
+## API
+Weather information is received from [openweathermap.org](https://openweathermap.org/) via API
+
 ## Getting started on win PC
 
 ```
