@@ -9,6 +9,7 @@ Weather information is received from [openweathermap.org](https://openweathermap
 git clone https://github.com/N0Fantasy/weatherProject.git
 cd weater-app
 ```
+installing dependencies `npm install` or `yarn install`  
 then `npm start` or `yarn start`
 
 ## Main page
